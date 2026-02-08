@@ -11,7 +11,10 @@ export class AStar {
 
     while (open.length > 0) {
       open.sort((a, b) => (fScore.get(AStar.key(a)) ?? Infinity) - (fScore.get(AStar.key(b)) ?? Infinity));
-      const current = open.shift()!;
+      const current = open.shift();
+      if (!current) {
+        break;
+      }
       if (current.x === goal.x && current.y === goal.y) {
         return AStar.reconstruct(cameFrom, current);
       }

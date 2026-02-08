@@ -19,7 +19,11 @@ export class Animation {
     const total = this.frames.length * this.frameDuration;
     const t = this.loop ? this.elapsed % total : Math.min(this.elapsed, total - this.frameDuration);
     const index = Math.floor(t / this.frameDuration);
-    return this.sheet.getFrame(this.frames[index]);
+    const frame = this.frames[index];
+    if (frame === undefined) {
+      throw new Error("Animation has no frames.");
+    }
+    return this.sheet.getFrame(frame);
   }
 
   reset() {

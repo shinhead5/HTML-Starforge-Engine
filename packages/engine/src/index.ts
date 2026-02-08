@@ -1,4 +1,5 @@
 export { Engine } from "./core/Engine";
+export { createGame } from "./core/createGame";
 export { Time } from "./core/Time";
 export { Logger } from "./core/Logger";
 export { EventBus } from "./core/EventBus";
@@ -64,5 +65,7 @@ export { DebugOverlay } from "./debug/DebugOverlay";
 export { Gizmos } from "./debug/Gizmos";
 
 export { Assert } from "./utils/Assert";
+export { at, atOr } from "./utils/Array";
+export type { NonEmptyArray } from "./utils/Array";
 export { Pool } from "./utils/Pool";
 export { Signal } from "./utils/Signal";

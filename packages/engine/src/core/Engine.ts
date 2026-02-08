@@ -15,6 +15,7 @@ export interface EngineOptions {
   height: number;
   pixelRatio: PixelRatioOption;
   fixedTimeStep?: number;
+  enableDebug?: boolean;
 }
 
 export class Engine {
@@ -39,6 +40,7 @@ export class Engine {
     this.assets = new AssetManager(audioContext);
     this.audio = new AudioBus(audioContext);
     this.debug = new DebugOverlay(this);
+    this.debug.visible = options.enableDebug ?? false;
 
     this.applySize();
     window.addEventListener("resize", () => this.applySize());
