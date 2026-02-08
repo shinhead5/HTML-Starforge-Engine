@@ -1,0 +1,6 @@
+{
+  "name": "basic",
+  "tileSize": 32,
+  "image": "/assets/tiles.png",
+  "columns": 1
+}
